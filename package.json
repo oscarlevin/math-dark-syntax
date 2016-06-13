@@ -1,0 +1,17 @@
+{
+  "name": "math-dark-syntax",
+  "theme": "syntax",
+  "version": "0.0.1",
+  "description": "A dark theme designed to be used with LaTeX and other math writing",
+  "keywords": [
+    "syntax",
+    "theme",
+    "LaTeX",
+    "math"
+  ],
+  "repository": "https://github.com/atom/math-dark-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}
