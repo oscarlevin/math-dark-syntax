@@ -160,15 +160,16 @@ atom-text-editor .search-results .marker.current-result .region,
     &.heading,
     &.identity {
       color: @blue;
+      font-size: 120%;
     }
 
     &.bold {
-      color: @light-orange;
+      // color: @light-orange;
       font-weight: bold;
     }
 
     &.italic {
-      color: @purple;
+      // color: @purple;
       font-style: italic;
     }
   }
@@ -256,7 +257,7 @@ atom-text-editor .search-results .marker.current-result .region,
 
 .markup {
   &.bold {
-    color: @orange;
+    // color: @orange;
     font-weight: bold;
   }
 
@@ -269,7 +270,7 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 
   &.italic {
-    color: @purple;
+    // color: @purple;
     font-style: italic;
   }
 
@@ -315,6 +316,16 @@ atom-text-editor[mini] .scroll-view,
     font-style: italic;
   }
 
+  .group.braces.tex {
+    color: lighten(@purple, 30%);
+  }
+
+  .function.environment.general.latex {
+    .variable.parameter.function.latex {
+      color: @light-orange;
+    }
+  }
+
   .string.other.math {
       color: @math-mode-color;
       * {
@@ -333,5 +344,7 @@ atom-text-editor[mini] .scroll-view,
 
   .entity.name.section.latex {
     font-weight: bold;
+    font-size:115%;
   }
+
 }
