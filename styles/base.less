@@ -305,3 +305,33 @@ atom-text-editor[mini] .scroll-view,
 :host([mini]) .scroll-view {
   padding-left: 1px;
 }
+
+
+// LaTeX:
+
+.text.tex.latex {
+  .string.quoted.double {
+    color: currentColor;
+    font-style: italic;
+  }
+
+  .string.other.math {
+      color: @math-mode-color;
+      * {
+        color: @math-mode-color;
+      }
+    .constant.other, .punctuation.definition.constant.math.tex, .constant.character, .constant.character.escape {
+      color: lighten(@math-mode-color, 10%);
+    }
+  }
+
+  .punctuation.definition.string {
+    &.begin.latex, &.end.latex, &.begin.tex, &.end.tex {
+      color: darken(@math-mode-color, 15%);
+    }
+  }
+
+  .entity.name.section.latex {
+    font-weight: bold;
+  }
+}
