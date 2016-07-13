@@ -44,6 +44,17 @@ atom-text-editor, :host {
     background-color: @syntax-selection-color;
   }
 
+atom-text-editor .search-results .marker .region,
+:host .search-results .marker .region {
+  background-color: transparent;
+  border: 1px solid @syntax-result-marker-color;
+}
+
+atom-text-editor .search-results .marker.current-result .region,
+:host .search-results .marker.current-result .region {
+  border: 1px solid @syntax-result-marker-color-selected;
+}
+
   // Markdown Styles
 
   .source.gfm {
@@ -133,6 +144,13 @@ atom-text-editor, :host {
   &.operator {
     color: #EDEDED;
   }
+  &.other.special-method {
+    color: @blue;
+  }
+
+  &.other.unit {
+    color: @orange;
+  }
 }
 
 .storage {
@@ -149,10 +167,30 @@ atom-text-editor, :host {
   &.numeric {
     color: #FF73FD;
   }
+
+  &.character.escape {
+    color: @cyan;
+  }
+
+  &.other.color {
+    color: @cyan;
+  }
+
+  &.other.symbol {
+    color: @green;
+  }
 }
 
 .variable {
   color: #C6C5FE;
+
+  &.interpolation {
+    color: darken(@red, 10%);
+  }
+
+  &.parameter.function {
+    color: @syntax-text-color;
+  }
 }
 
 .invalid.deprecated {
@@ -212,6 +250,42 @@ atom-text-editor, :host {
   }
 }
 
+.punctuation {
+  &.definition {
+    &.comment {
+      color: @light-gray;
+    }
+
+    &.string,
+    &.variable,
+    &.parameters,
+    &.array {
+      color: @syntax-text-color;
+    }
+
+    &.heading,
+    &.identity {
+      color: @blue;
+      font-size: 120%;
+    }
+
+    &.bold {
+      // color: @light-orange;
+      font-weight: bold;
+    }
+
+    &.italic {
+      // color: @purple;
+      font-style: italic;
+    }
+  }
+
+  &.section.embedded {
+    color: darken(@red, 10%);
+  }
+
+}
+
 .support {
   color: #FFFFB6;
 
@@ -225,6 +299,18 @@ atom-text-editor, :host {
 
   &.type.property-name.css {
     color: #EDEDED;
+  }
+
+  &.class {
+    color: @light-orange;
+  }
+
+  &.function  {
+    color: #DAD085;
+
+    &.any-method {
+      color: #ffeb3b;
+    }
   }
 }
 
@@ -244,6 +330,38 @@ atom-text-editor, :host {
   &.name.tag.namespace,
   &.other.attribute-name.namespace {
     color: #E18964;
+  }
+
+  &.name.function {
+    color: @blue;
+  }
+  &.name.type {
+    color: @light-orange;
+    text-decoration: underline;
+  }
+
+  &.other.inherited-class {
+    color: @green;
+  }
+  &.name.class, &.name.type.class {
+    color: @light-orange;
+  }
+
+  &.name.section {
+    color: @blue;
+  }
+
+  &.name.tag {
+    color: @red;
+    text-decoration: underline;
+  }
+
+  &.other.attribute-name {
+    color: @orange;
+
+    &.id {
+      color: @blue;
+    }
   }
 }
 
@@ -336,6 +454,9 @@ atom-text-editor, :host {
   }
 }
 
+.none {
+  color: @syntax-text-color;
+}
 
 // Markup (frome generated theme, with modifications)
 .markup {
