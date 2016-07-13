@@ -337,6 +337,61 @@ atom-text-editor, :host {
 }
 
 
+// Markup (frome generated theme, with modifications)
+.markup {
+  &.bold {
+    // color: @orange;
+    font-weight: bold;
+  }
+
+  &.changed {
+    color: @purple;
+  }
+
+  &.deleted {
+    color: @red;
+  }
+
+  &.italic {
+    // color: @purple;
+    font-style: italic;
+  }
+
+  &.heading .punctuation.definition.heading {
+    color: @blue;
+  }
+
+  &.inserted {
+    color: @green;
+  }
+
+  &.list {
+    color: @red;
+  }
+
+  &.quote {
+    color: @orange;
+  }
+
+  &.raw.inline {
+    color: @green;
+  }
+}
+
+.source.gfm .markup {
+  -webkit-font-smoothing: auto;
+  &.heading {
+    color: @green;
+  }
+}
+
+atom-text-editor[mini] .scroll-view,
+:host([mini]) .scroll-view {
+  padding-left: 1px;
+}
+
+
+
 
 // LaTeX & MBX:
 
